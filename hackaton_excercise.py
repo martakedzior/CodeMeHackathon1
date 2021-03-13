@@ -55,6 +55,11 @@ while number_of_guesses > 0:
     counter = 0
     number_of_guesses -= 1
 
+    anwser_to_string = ''.join(anwser)
+    if anwser_to_string == random_word:
+        print(f'You have guessed correctly. This word is {random_word}. Congratulations!')
+        break
+
     is_final_anwser = input('Would you like to guess entire word? y/n: ')
 
     if is_final_anwser == 'y':
