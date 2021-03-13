@@ -78,7 +78,7 @@ while nr_of_guesses > 0:
         if final_answer == random_word:
             print(f'You have guessed correctly. This word is {random_word}. Congratulations!')
             break
-        else:
+        if final_answer != random_word:
             print('No this is not the word I am looking for. Guess further! ')
 
     if nr_of_guesses == 0:
