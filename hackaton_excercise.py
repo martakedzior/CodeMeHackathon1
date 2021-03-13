@@ -30,6 +30,7 @@ words = ['account', 'addition', 'adjustment', 'advertisement', 'agreement',
          'surprise', 'system', 'teaching', 'tendency', 'theory', 'thought',
          'thunder', 'transport', 'trouble', 'vessel', 'weather', 'weight',
          'winter', 'writing']
+
 random_word = random.choice(words)
 len_random_word = len(random_word)
 
