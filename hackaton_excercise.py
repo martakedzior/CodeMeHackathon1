@@ -38,48 +38,48 @@ print('This is hangman game. I have randomly selected a word, you will provide l
 print('You can guess 6 times. After each round you will have a chance to guess entire word. Good Luck! ')
 print(f'My word has {len_random_word} letters: ')
 
-anwser = ['_'] * len_random_word
-print(' '.join(anwser))
+answer = ['_'] * len_random_word
+print(' '.join(answer))
 
 counter = 0
-number_of_guesses = 10
+nr_of_guesses = 10
 
-while number_of_guesses > 0:
-    user_guess = input(f'Please provide letter which you would like to guess. You have {number_of_guesses} guesses left: ')
+while nr_of_guesses > 0:
+    user_guess = input(f'Please provide letter which you would like to guess. You have {nr_of_guesses} guesses left: ')
 
     if len(user_guess) > 1:
         print('Try again, you need to provide only one letter.')
-        user_guess = input(f'Please provide letter which you would like to guess. You have {number_of_guesses} guesses left: ')
+        user_guess = input(f'Please provide letter which you would like to guess: ')
 
     if user_guess.isdigit():
         print('Try again, you need to provide only letters')
-        user_guess = input(f'Please provide letter which you would like to guess. You have {number_of_guesses} guesses left: ')
+        user_guess = input(f'Please provide letter which you would like to guess: ')
 
     user_guess = user_guess.lower()
 
     for letter in random_word:
         if user_guess == letter:
-            anwser[counter] = user_guess
+            answer[counter] = user_guess
         counter += 1
-    print(' '.join(anwser))
-    counter = 0
-    number_of_guesses -= 1
 
-    anwser_to_string = ''.join(anwser)
-    if anwser_to_string == random_word:
+    print(' '.join(answer))
+    counter = 0
+    nr_of_guesses -= 1
+
+    answer_to_string = ''.join(answer)
+    if answer_to_string == random_word:
         print(f'You have guessed correctly. This word is {random_word}. Congratulations!')
         break
 
-    is_final_anwser = input('Would you like to guess entire word? y/n: ')
+    is_final_answer = input('Would you like to guess entire word? y/n: ')
 
-    if is_final_anwser == 'y':
-        final_anwser = input('Please guess entire word: ')
-        if final_anwser == random_word:
+    if is_final_answer == 'y':
+        final_answer = input('Please guess entire word: ')
+        if final_answer == random_word:
             print(f'You have guessed correctly. This word is {random_word}. Congratulations!')
             break
         else:
             print('No this is not the word I am looking for. Guess further! ')
 
-    if number_of_guesses == 0:
+    if nr_of_guesses == 0:
         print(f'You are out of guesses. The word I was looking for is: {random_word} ')
-
