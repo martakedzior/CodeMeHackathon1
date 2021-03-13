@@ -47,6 +47,16 @@ number_of_guesses = 10
 while number_of_guesses > 0:
     user_guess = input(f'Please provide letter which you would like to guess. You have {number_of_guesses} guesses left: ')
 
+    if len(user_guess) > 1:
+        print('Try again, you need to provide only one letter.')
+        user_guess = input(f'Please provide letter which you would like to guess. You have {number_of_guesses} guesses left: ')
+
+    if user_guess.isdigit():
+        print('Try again, you need to provide only letters')
+        user_guess = input(f'Please provide letter which you would like to guess. You have {number_of_guesses} guesses left: ')
+
+    user_guess = user_guess.lower()
+
     for letter in random_word:
         if user_guess == letter:
             anwser[counter] = user_guess
